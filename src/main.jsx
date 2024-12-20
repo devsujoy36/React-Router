@@ -16,7 +16,7 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <Home />,
-    errorElement: <ErrorPage/>,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: '/about',
@@ -40,14 +40,14 @@ const router = createBrowserRouter([
 
 
       {
-        path:'/posts',
-        loader: ()=> fetch('https://jsonplaceholder.typicode.com/posts'),
-        element:<Posts/>
+        path: '/posts',
+        loader: () => fetch('https://jsonplaceholder.typicode.com/posts'),
+        element: <Posts />
       },
       {
-        path:'/post/:postId',
-        loader: ({params})=> fetch(`https://jsonplaceholder.typicode.com/posts/${params.postId}`),
-        element:<PostDetails/>
+        path: '/post/:postId',
+        loader: ({ params }) => fetch(`https://jsonplaceholder.typicode.com/posts/${params.postId}`),
+        element: <PostDetails />
       }
     ]
   },

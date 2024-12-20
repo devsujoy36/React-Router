@@ -3,6 +3,7 @@ import Post from "./Post";
 
 const Posts = () => {
   const posts = useLoaderData()
+  
   return (
     <div className="flex justify-center items-center flex-col my-5 max-w-screen-2xl mx-auto">
             <h1 className='text-4xl font-semibold cursor-pointer'>Posts.jsx</h1>

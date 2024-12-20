@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom"
 
 const User = ({ user }) => {
-    const { id, name, email, phone } = user
+    const { id, name, email, phone } = user;
     return (
         <div className="hover:-translate-x-1 hover:-translate-y-1 transition-all border-emerald-500 border-2 p-5 rounded-md shadow-lg text-center">
             
@@ -17,6 +17,8 @@ const User = ({ user }) => {
             <div className="mt-5 ">
                 <Link className="bg-emerald-500 px-4 py-2 rounded-lg" to={`/user/${id}`}> Show Details</Link>
             </div>
+
+            
         </div>
     )
 }  

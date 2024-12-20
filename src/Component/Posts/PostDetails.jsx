@@ -1,13 +1,19 @@
-import { useLoaderData, useNavigate } from "react-router-dom"
+import { useLoaderData, useNavigate, useParams } from "react-router-dom"
 
 const PostDetails = () => {
     const post = useLoaderData();
     const { id, title, body } = post;
 
+    const {postId} = useParams()
+    console.log(postId);
+
     const navigate = useNavigate()
     const goBackHandler = () => {
         navigate(-1)
     }
+
+
+
     return (
         <div className="max-w-screen-2xl mx-auto">
             <div className="md:w-4/12 md:mx-auto border-emerald-600 border my-5 mx-5 grid gap-2 rounded-lg p-5 ">

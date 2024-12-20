@@ -1,11 +1,17 @@
-import { useLoaderData } from "react-router-dom"
+import { useLoaderData, useNavigate } from "react-router-dom"
 
 const UserDetails = () => {
 
     const user = useLoaderData();
-    console.log(user);
     const { name, email, phone, username, website, address, company } = user;
     const { street, suite, city, zipcode, } = address;
+
+    const navigate = useNavigate()
+    const goBackHandler = () => {
+        navigate(-1)
+    }
+   
+    
     return (
         <div className="flex justify-center items-center m-5">
             <div className=" p-5 rounded-md ">
@@ -25,6 +31,10 @@ const UserDetails = () => {
                         </div>
                     </div>
                     <a href="/" className=""><span className="font-semibold">Website:</span> www.{website}</a>
+                </div>
+                <div className="">
+                    <button onClick={goBackHandler} className="float-end bg-emerald-500 px-4 py-2 rounded-md text-white font-semibold active:scale-95 hover:bg-emerald-400 transition-all" >Go Back</button>
+
                 </div>
             </div>
         </div>

@@ -4,13 +4,13 @@ import { Link, useNavigate } from "react-router-dom";
 
 
 const Post = ({ post }) => {
-    console.log(post);
     const { id, title, body } = post;
 
     const navigate = useNavigate();
     const handleShowDetails = () => {
         navigate(`/post/${id}`)
     }
+
 
     return (
         <div className="border-black border-2 grid gap-2 rounded-xl p-5 hover:-translate-y-1 transition-all">
