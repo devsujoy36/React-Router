@@ -15,10 +15,13 @@ const Home = () => {
     const navClickHandler = () => {
         setToggle(false)
     }
+    const navClickHandlerTrue = () => {
+        setToggle(true)
+    }
 
     return (
         <div className="">
-            <Header navClickHandler={navClickHandler} />
+            <Header navClickHandler={navClickHandler} navClickHandlerTrue={navClickHandlerTrue} />
             {
                 toggle &&
                 <div className="min-h-[76vh] bg-black text-white flex justify-center gap-2 flex-col items-center">
@@ -26,7 +29,7 @@ const Home = () => {
                     <h1 className="text-4xl  font-bold">React Route</h1>
                 </div>
             }
-            
+
             {
                 navigation.state === "loading" ? <Loading /> : <Outlet />
             }
